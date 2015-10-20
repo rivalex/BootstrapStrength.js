@@ -102,7 +102,7 @@ $('#myPassword').bootstrapStrength({
 		</tr>
 		<tr>
 			<td>slimBar</td>
-			<td>true</td>
+			<td>false</td>
 			<td>Reduce the standard Bootstrap progress bar to a 7px height</td>
 		</tr>
 		<tr>
@@ -117,7 +117,7 @@ $('#myPassword').bootstrapStrength({
 		</tr>
 		<tr>
 			<td>upperReg</td>
-			<td>`[A-Z]`</td>
+			<td>[A-Z]</td>
 			<td>A <b>RegEx</b> containing the Capitol definition for matching. It can be customized to mach specific character groups.</td>
 		</tr>
 		<tr>
@@ -127,7 +127,7 @@ $('#myPassword').bootstrapStrength({
 		</tr>
 		<tr>
 			<td>lowerReg</td>
-			<td>`[a-z]`</td>
+			<td>[a-z]</td>
 			<td>A <b>RegEx</b> containing the Lower Case definition for matching. It can be customized to mach specific character groups.</td>
 		</tr>
 		<tr>
@@ -166,12 +166,12 @@ $('#myPassword').bootstrapStrength({
 			<td>Style use under 50% of string strength</td>
 		</tr>
 		<tr>
-			<td>meterClasses.weak</td>
+			<td>meterClasses.medium</td>
 			<td>progress-bar-warning</td>
 			<td>Style use between 50% and 80% of string strength</td>
 		</tr>
 		<tr>
-			<td>meterClasses.weak</td>
+			<td>meterClasses.good</td>
 			<td>progress-bar-success</td>
 			<td>Style use for 100% of string strength</td>
 		</tr>
