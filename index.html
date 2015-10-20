@@ -16,6 +16,23 @@
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<style>
+		html {
+			font-size: 18px;
+		}
+		
+		li.L0,
+		li.L1,
+		li.L2,
+		li.L3,
+		li.L5,
+		li.L6,
+		li.L7,
+		li.L8 {
+			list-style-type: decimal !important
+		}
+
+	</style>
 </head>
 
 <body>
@@ -29,150 +46,105 @@
 		</section>
 
 		<section class="main-content">
-		<h1>
-<a id="bootstrapstrengthjs" class="anchor" href="#bootstrapstrengthjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>BootstrapStrength.js</h1>
+			<h1>BootstrapStrength.js</h1>
 
-		<p>jQuery plugin to calculate string or password strength with Bootstrap progress bar full customizable. Thanks to <a href="https://github.com/aarondo" class="user-mention">@aarondo</a> project that inspire a Bootstrap dedicated plugin.</p>
+			<p>jQuery plugin to calculate string or password strength with Bootstrap progress bar full customizable. Thanks to <a href="https://github.com/aarondo" class="user-mention">@aarondo</a> project that inspire a Bootstrap dedicated plugin.</p>
 
-		<h2>
-<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+			<h2>Documentation</h2>
 
-		<p>BootstrapStrength.js provides a string strength indicator to show how secure a users password or a string is.</p>
+			<p>BootstrapStrength.js provides a string strength indicator to show how secure a users password or a string is.</p>
 
-		<p>The string strength indicator is marked on 5 scores. These are</p>
+			<p>The string strength indicator is marked on 5 scores. These are</p>
 
-		<ul>
-			<li> String must contain 8 characters or more</li>
-			<li> String must contain 1 lowercase letter</li>
-			<li> String must contain 1 uppercase letter</li>
-			<li> String must contain 1 number</li>
-			<li> String must contain 1 special character such as <code>[!,%,&amp;,@,#,$,^,*,?,_,~]</code>
-			</li>
-		</ul>
+			<ul>
+				<li> String must contain 8 characters or more</li>
+				<li> String must contain 1 lowercase letter</li>
+				<li> String must contain 1 uppercase letter</li>
+				<li> String must contain 1 number</li>
+				<li> String must contain 1 special character such as <code>[!,%,&amp;,@,#,$,^,*,?,_,~]</code>
+				</li>
+			</ul>
 
-		<p>The script works on input fileds an on <strong>Bootstrap input group</strong> fields as well. </p>
-		
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Default requires for validation and option variables</h3>
-					</div>
-					<div class="panel-body">
-						<ul>
-							<li>At least <b>8</b> characters</li>
-							<li><b>1</b> Uppercase letter</li>
-							<li><b>1</b> lowercase letter</li>
-							<li><b>1</b> number</li>
-							<li><b>1</b> special character such as <code>[!,%,&,@,#,$,^,*,?,_,~]</code></li>
-						</ul>
-						<pre class="prettyprint"><code class="language-javascript">$.bootstrapStrength.defaults = {
-	stripped: true,
-	active: true,
-	slimBar: true,
-	minLenght: 8,
-	upperCase: 1,
-	upperReg: "[A-Z]",
-	lowerCase: 1,
-	lowerReg: "[a-z]",
-	numbers: 1,
-	numberReg: "[0-9]",
-	specialchars: 1,
-	specialReg: "[!,%,&,@,#,$,^,*,?,_,~]",
-	topMargin: "5px;",
-	meterClasses: {
-		weak: "progress-bar-danger",
-		medium: "progress-bar-warning",
-		good: "progress-bar-success"
-	}
-};</code></pre>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="page-header">
+			<p>The script works on input fileds an on <strong>Bootstrap input group</strong> fields as well. </p>
+
 			<h1>Basic usage</h1>
-		</div>
-		<div class="row">
-			<div class="col-md-6">
-				<label class="control-label obb" for="password1">My string or password in simple input field</label>
-				<input id="password1" name="password1" class="form-control passMeter" type="text" value="" />
-			</div>
-			<div class="col-md-6">
-				<label class="control-label obb" for="password2">My string or password in form group input field</label>
-				<div class="input-group">
-					<span class="input-group-addon">
+			<div class="row">
+				<div class="col-md-6">
+					<label class="control-label obb" for="password1">My string or password in simple input field</label>
+					<input id="password1" name="password1" class="form-control passMeter" type="text" value="" />
+				</div>
+				<div class="col-md-6">
+					<label class="control-label obb" for="password2">My string or password in form group input field</label>
+					<div class="input-group">
+						<span class="input-group-addon">
 					<span class="icon"><i class="fa fa-user-secret text-dark"></i></span>
-					</span>
-					<input id="password2" name="password2" class="form-control passMeter" type="text" value="" />
+						</span>
+						<input id="password2" name="password2" class="form-control passMeter" type="text" value="" />
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<pre class="prettyprint linenums"><code class="language-javascript">$('.passMeter').bootstrapStrength();</code></pre>
+			<div class="row">
+				<div class="col-md-12">
+					<pre class="prettyprint linenums"><code class="language-javascript">$('.passMeter').bootstrapStrength();</code></pre>
+				</div>
 			</div>
-		</div>
-		
-		<div class="page-header">
+
 			<h1>Using standard progress bar</h1>
-		</div>
-		<div class="row">
-			<div class="col-md-6">
-				<label class="control-label obb" for="bigbar1">My string or password in simple input field</label>
-				<input id="bigbar1" name="bigbar1" class="form-control passMeterSlim" type="text" value="" />
-			</div>
-			<div class="col-md-6">
-				<label class="control-label obb" for="bigbar2">My string or password in form group input field</label>
-				<div class="input-group">
-					<span class="input-group-addon">
+			<div class="row">
+				<div class="col-md-6">
+					<label class="control-label obb" for="bigbar1">My string or password in simple input field</label>
+					<input id="bigbar1" name="bigbar1" class="form-control passMeterSlim" type="text" value="" />
+				</div>
+				<div class="col-md-6">
+					<label class="control-label obb" for="bigbar2">My string or password in form group input field</label>
+					<div class="input-group">
+						<span class="input-group-addon">
 					<span class="icon"><i class="fa fa-user-secret text-dark"></i></span>
-					</span>
-					<input id="bigbar2" name="bigbar2" class="form-control passMeterSlim" type="text" value="" />
+						</span>
+						<input id="bigbar2" name="bigbar2" class="form-control passMeterSlim" type="text" value="" />
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<pre class="prettyprint linenums:1"><code class="language-javascript">$('.passMeterSlim').bootstrapStrength({
+			<div class="row">
+				<div class="col-md-12">
+					<pre class="prettyprint linenums:1"><code class="language-javascript">$('.passMeterSlim').bootstrapStrength({
 	slimBar: false
 });</code></pre>
+				</div>
 			</div>
-		</div>
 
-		<h2>
+			<h2>
 <a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
 
-		<h3>
+			<h3>
 <a id="include-the-relevant-files" class="anchor" href="#include-the-relevant-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Include the relevant files</h3>
 
-		<p>Firstly include <strong>jQuery</strong>, <strong>Bootstrap</strong> and <strong>bootstrap-strength.js</strong> files. Place these before <code>&amp;lt;/head&amp;gt;</code> section or in footer as well.</p>
+			<p>Firstly include <strong>jQuery</strong>, <strong>Bootstrap</strong> and <strong>bootstrap-strength.js</strong> files. Place these before <code>&amp;lt;/head&amp;gt;</code> section or in footer as well.</p>
 
-		<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://code.jquery.com/jquery-2.1.4.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+			<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://code.jquery.com/jquery-2.1.4.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 &lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>bootstrap-strength.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 &lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>script.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
-		<h3>
+			<h3>
 <a id="create-a-password-or-text-input-field" class="anchor" href="#create-a-password-or-text-input-field" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a password or text input field</h3>
 
-		<p>All fields <strong>must have a unique ID</strong>.</p>
+			<p>All fields <strong>must have a unique ID</strong>.</p>
 
-		<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">input</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>myPassword<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>password<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>&gt;</pre></div>
+			<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">input</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>myPassword<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>password<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>&gt;</pre></div>
 
-		<h3>
+			<h3>
 <a id="initiate-the-plugin" class="anchor" href="#initiate-the-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initiate the plugin</h3>
 
-		<p>Once you have created your input field you will need to initiate the plugin. At its most basic level you can initiate the plugin like:</p>
+			<p>Once you have created your input field you will need to initiate the plugin. At its most basic level you can initiate the plugin like:</p>
 
-		<div class="highlight highlight-source-js"><pre>$(<span class="pl-c1">document</span>).ready(<span class="pl-k">function</span> (<span class="pl-smi">$</span>) {
+			<div class="highlight highlight-source-js"><pre>$(<span class="pl-c1">document</span>).ready(<span class="pl-k">function</span> (<span class="pl-smi">$</span>) {
 	$(<span class="pl-s"><span class="pl-pds">"</span>#myPassword<span class="pl-pds">"</span></span>).bootstrapStrength();
 });</pre></div>
 
-		<p>If you want to initiate the plugin with options then you can do so like:</p>
+			<p>If you want to initiate the plugin with options then you can do so like:</p>
 
-		<div class="highlight highlight-source-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#myPassword<span class="pl-pds">'</span></span>).bootstrapStrength({
+			<div class="highlight highlight-source-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#myPassword<span class="pl-pds">'</span></span>).bootstrapStrength({
 	stripped<span class="pl-k">:</span> <span class="pl-c1">true</span>,
 	active<span class="pl-k">:</span> <span class="pl-c1">true</span>,
 	slimBar<span class="pl-k">:</span> <span class="pl-c1">true</span>,
@@ -193,113 +165,113 @@
 	}
 });</pre></div>
 
-		<h2>
+			<h2>
 <a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h2>
 
-		<table>
-			<thead>
-				<tr>
-					<th>Variable</th>
-					<th>Default Value</th>
-					<th>Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>stripped</td>
-					<td>true</td>
-					<td>Use the stripped progress bar from Bootstrap css</td>
-				</tr>
-				<tr>
-					<td>active</td>
-					<td>true</td>
-					<td>Animate the stripped progress bar if enabled</td>
-				</tr>
-				<tr>
-					<td>slimBar</td>
-					<td>true</td>
-					<td>Reduce the standard Bootstrap progress bar to a 7px height</td>
-				</tr>
-				<tr>
-					<td>minLenght</td>
-					<td>8</td>
-					<td>Define the <b>minumum length</b> of the string</td>
-				</tr>
-				<tr>
-					<td>upperCase</td>
-					<td>1</td>
-					<td>Define <b>how many Upper case letter/s</b> are required. Any positive integer is accepted</td>
-				</tr>
-				<tr>
-					<td>upperReg</td>
-					<td>[A-Z]</td>
-					<td>A <b>RegEx</b> containing the Capitol definition for matching. It can be customized to mach specific character groups.</td>
-				</tr>
-				<tr>
-					<td>lowerCase</td>
-					<td>1</td>
-					<td>Define <b>how many Lower case letter/s</b> are required. Any positive integer is accepted</td>
-				</tr>
-				<tr>
-					<td>lowerReg</td>
-					<td>[a-z]</td>
-					<td>A <b>RegEx</b> containing the Lower Case definition for matching. It can be customized to mach specific character groups.</td>
-				</tr>
-				<tr>
-					<td>numbers</td>
-					<td>1</td>
-					<td>Define <b>how many Number/s</b> are required. Any positive integer is accepted</td>
-				</tr>
-				<tr>
-					<td>numberReg</td>
-					<td>[0-9]</td>
-					<td>A <b>RegEx</b> containing the Numbers definition for matching. It can be customized to mach specific character groups.</td>
-				</tr>
-				<tr>
-					<td>specialchars</td>
-					<td>1</td>
-					<td>Define <b>how many Special Character/s</b> are required. Any positive integer is accepted</td>
-				</tr>
-				<tr>
-					<td>specialReg</td>
-					<td>[!,%,&amp;,@,#,$,^,*,?,_,~]</td>
-					<td>A <b>RegEx</b> containing the Special Character definition for matching. It can be customized to mach specific character groups.</td>
-				</tr>
-				<tr>
-					<td>topMargin</td>
-					<td>5px</td>
-					<td>Define the margin between input and progress bar.</td>
-				</tr>
-				<tr>
-					<td>meterClasses</td>
-					<td></td>
-					<td>Contain an array for css progress bar classes</td>
-				</tr>
-				<tr>
-					<td>meterClasses.weak</td>
-					<td>progress-bar-danger</td>
-					<td>Style use under 50% of string strength</td>
-				</tr>
-				<tr>
-					<td>meterClasses.weak</td>
-					<td>progress-bar-warning</td>
-					<td>Style use between 50% and 80% of string strength</td>
-				</tr>
-				<tr>
-					<td>meterClasses.weak</td>
-					<td>progress-bar-success</td>
-					<td>Style use for 100% of string strength</td>
-				</tr>
-			</tbody>
-		</table>
+			<table>
+				<thead>
+					<tr>
+						<th>Variable</th>
+						<th>Default Value</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>stripped</td>
+						<td>true</td>
+						<td>Use the stripped progress bar from Bootstrap css</td>
+					</tr>
+					<tr>
+						<td>active</td>
+						<td>true</td>
+						<td>Animate the stripped progress bar if enabled</td>
+					</tr>
+					<tr>
+						<td>slimBar</td>
+						<td>true</td>
+						<td>Reduce the standard Bootstrap progress bar to a 7px height</td>
+					</tr>
+					<tr>
+						<td>minLenght</td>
+						<td>8</td>
+						<td>Define the <b>minumum length</b> of the string</td>
+					</tr>
+					<tr>
+						<td>upperCase</td>
+						<td>1</td>
+						<td>Define <b>how many Upper case letter/s</b> are required. Any positive integer is accepted</td>
+					</tr>
+					<tr>
+						<td>upperReg</td>
+						<td>[A-Z]</td>
+						<td>A <b>RegEx</b> containing the Capitol definition for matching. It can be customized to mach specific character groups.</td>
+					</tr>
+					<tr>
+						<td>lowerCase</td>
+						<td>1</td>
+						<td>Define <b>how many Lower case letter/s</b> are required. Any positive integer is accepted</td>
+					</tr>
+					<tr>
+						<td>lowerReg</td>
+						<td>[a-z]</td>
+						<td>A <b>RegEx</b> containing the Lower Case definition for matching. It can be customized to mach specific character groups.</td>
+					</tr>
+					<tr>
+						<td>numbers</td>
+						<td>1</td>
+						<td>Define <b>how many Number/s</b> are required. Any positive integer is accepted</td>
+					</tr>
+					<tr>
+						<td>numberReg</td>
+						<td>[0-9]</td>
+						<td>A <b>RegEx</b> containing the Numbers definition for matching. It can be customized to mach specific character groups.</td>
+					</tr>
+					<tr>
+						<td>specialchars</td>
+						<td>1</td>
+						<td>Define <b>how many Special Character/s</b> are required. Any positive integer is accepted</td>
+					</tr>
+					<tr>
+						<td>specialReg</td>
+						<td>[!,%,&amp;,@,#,$,^,*,?,_,~]</td>
+						<td>A <b>RegEx</b> containing the Special Character definition for matching. It can be customized to mach specific character groups.</td>
+					</tr>
+					<tr>
+						<td>topMargin</td>
+						<td>5px</td>
+						<td>Define the margin between input and progress bar.</td>
+					</tr>
+					<tr>
+						<td>meterClasses</td>
+						<td></td>
+						<td>Contain an array for css progress bar classes</td>
+					</tr>
+					<tr>
+						<td>meterClasses.weak</td>
+						<td>progress-bar-danger</td>
+						<td>Style use under 50% of string strength</td>
+					</tr>
+					<tr>
+						<td>meterClasses.weak</td>
+						<td>progress-bar-warning</td>
+						<td>Style use between 50% and 80% of string strength</td>
+					</tr>
+					<tr>
+						<td>meterClasses.weak</td>
+						<td>progress-bar-success</td>
+						<td>Style use for 100% of string strength</td>
+					</tr>
+				</tbody>
+			</table>
 
-		<footer class="site-footer">
-			<span class="site-footer-owner"><a href="https://github.com/rivalex/bootstrap-strength.js">BootstrapStrength.js</a> is maintained by <a href="https://github.com/rivalex">rivalex</a>.</span>
+			<footer class="site-footer">
+				<span class="site-footer-owner"><a href="https://github.com/rivalex/bootstrap-strength.js">BootstrapStrength.js</a> is maintained by <a href="https://github.com/rivalex">rivalex</a>.</span>
 
-			<span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-		</footer>
+				<span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+			</footer>
 
-	</section>
+		</section>
 	</div>
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
