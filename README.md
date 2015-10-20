@@ -1,7 +1,7 @@
 # BootstrapStrength.js
 
 jQuery plugin to calculate string or password strength with Bootstrap progress bar full customizable.
-Thanks to  @aarondo project that inspire a Bootstrap dedicated plugin.
+Thanks to https://github.com/aarondo project that inspire a Bootstrap dedicated plugin.
 
 ## Documentation
 
