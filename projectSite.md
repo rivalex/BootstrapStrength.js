@@ -1,14 +1,11 @@
 # BootstrapStrength.js
 
 jQuery plugin to calculate string or password strength with Bootstrap progress bar full customizable.
-Thanks to  @aarondo project that inspire a Bootstrap dedicated plugin.
+Thanks to @aarondo project that inspire a Bootstrap dedicated plugin.
 
 ## Documentation
 
 BootstrapStrength.js provides a string strength indicator to show how secure a users password or a string is.
-
-## Demo
-For a demo visit http://rivalex.github.io/bootstrap-strength.js/
 
 The string strength indicator is marked on 5 scores. These are
 
@@ -18,22 +15,20 @@ The string strength indicator is marked on 5 scores. These are
 *   String must contain 1 number
 *   String must contain 1 special character such as `[!,%,&,@,#,$,^,*,?,_,~]`
 
-The script works on input fileds an on **Bootstrap input group** fields as well.
+The script works on input fileds an on **Bootstrap input group** fields as well. 
+
 
 ## Getting Started
 
 ### Include the relevant files
 
-Firstly include **jQuery**, **Bootstrap** and **bootstrap-strength.js** files. Place these before `<head>` section or in footer as well.
+Firstly include **jQuery**, **Bootstrap** and **bootstrap-strength.js** files. Place these before `&lt;/head&gt;` section or in footer as well.
 
 ```html
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
 <script type="text/javascript" src="bootstrap-strength.js"></script>
-<script type="text/javascript" src="myScript.js"></script>
+<script type="text/javascript" src="script.js"></script>
 ```
 
 ### Create a password or text input field
@@ -117,7 +112,7 @@ $('#myPassword').bootstrapStrength({
 		</tr>
 		<tr>
 			<td>upperReg</td>
-			<td>`[A-Z]`</td>
+			<td>[A-Z]</td>
 			<td>A <b>RegEx</b> containing the Capitol definition for matching. It can be customized to mach specific character groups.</td>
 		</tr>
 		<tr>
@@ -127,7 +122,7 @@ $('#myPassword').bootstrapStrength({
 		</tr>
 		<tr>
 			<td>lowerReg</td>
-			<td>`[a-z]`</td>
+			<td>[a-z]</td>
 			<td>A <b>RegEx</b> containing the Lower Case definition for matching. It can be customized to mach specific character groups.</td>
 		</tr>
 		<tr>
