@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Strength">
+	<meta name="author" content="rivalex">
+
+	<title>Bootstrap Strength</title>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+		li.L0, li.L1, li.L2, li.L3,
+		li.L5, li.L6, li.L7, li.L8
+		{ list-style-type: decimal !important }
+	</style>
+</head>
+
+<body role="document">
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Bootstrap Strength</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li class="dropdown-header">Nav header</li>
+							<li><a href="#">Separated link</a></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+
+	<div class="container theme-showcase" role="main">
+
+		<!-- Main jumbotron for a primary marketing message or call to action -->
+		<div class="jumbotron">
+			<h1>Bootstrap-Strength.js</h1>
+			<p>jQuery plugin to calculate string or password strength with Bootstrap progress bar full customizable.</p>
+			<p>Thanks to <a href="https://github.com/aarondo/Strength.js" target="_blank">@aarondo</a> project that inspire a Bootstrap dedicated plugin.</p>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Default requires for validation and option variables</h3>
+					</div>
+					<div class="panel-body">
+						<ul>
+							<li>At least <b>8</b> characters</li>
+							<li><b>1</b> Uppercase letter</li>
+							<li><b>1</b> lowercase letter</li>
+							<li><b>1</b> number</li>
+							<li><b>1</b> special character such as <code>[!,%,&,@,#,$,^,*,?,_,~]</code></li>
+						</ul>
+						<pre class="prettyprint"><code class="language-javascript">$.bootstrapStrength.defaults = {
+	stripped: true,
+	active: true,
+	slimBar: true,
+	minLenght: 8,
+	upperCase: 1,
+	upperReg: "[A-Z]",
+	lowerCase: 1,
+	lowerReg: "[a-z]",
+	numbers: 1,
+	numberReg: "[0-9]",
+	specialchars: 1,
+	specialReg: "[!,%,&,@,#,$,^,*,?,_,~]",
+	topMargin: "5px;",
+	meterClasses: {
+		weak: "progress-bar-danger",
+		medium: "progress-bar-warning",
+		good: "progress-bar-success"
+	}
+};</code></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="page-header">
+			<h1>Basic usage</h1>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label class="control-label obb" for="password1">My string or password in simple input field</label>
+				<input id="password1" name="password1" class="form-control passMeter" type="text" value="" />
+			</div>
+			<div class="col-md-6">
+				<label class="control-label obb" for="password2">My string or password in form group input field</label>
+				<div class="input-group">
+					<span class="input-group-addon">
+					<span class="icon"><i class="fa fa-user-secret text-dark"></i></span>
+					</span>
+					<input id="password2" name="password2" class="form-control passMeter" type="text" value="" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<pre class="prettyprint linenums"><code class="language-javascript">$('.passMeter').bootstrapStrength();</code></pre>
+			</div>
+		</div>
+		
+		<div class="page-header">
+			<h1>Using standard progress bar</h1>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label class="control-label obb" for="bigbar1">My string or password in simple input field</label>
+				<input id="bigbar1" name="bigbar1" class="form-control passMeterSlim" type="text" value="" />
+			</div>
+			<div class="col-md-6">
+				<label class="control-label obb" for="bigbar2">My string or password in form group input field</label>
+				<div class="input-group">
+					<span class="input-group-addon">
+					<span class="icon"><i class="fa fa-user-secret text-dark"></i></span>
+					</span>
+					<input id="bigbar2" name="bigbar2" class="form-control passMeterSlim" type="text" value="" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<pre class="prettyprint linenums:1"><code class="language-javascript">$('.passMeterSlim').bootstrapStrength({
+	slimBar: false
+});</code></pre>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
+	<script src="../src/bootstrap-strength.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
