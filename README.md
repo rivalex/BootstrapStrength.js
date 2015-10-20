@@ -8,7 +8,7 @@ Thanks to https://github.com/aarondo project that inspire a Bootstrap dedicated 
 BootstrapStrength.js provides a string strength indicator to show how secure a users password or a string is.
 
 ## Demo
-For a demo visit http://rivalex.github.io/bootstrap-strength.js/
+For a demo visit http://rivalex.github.io/BootstrapStrength.js/
 
 The string strength indicator is marked on 5 scores. These are
 
