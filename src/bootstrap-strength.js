@@ -19,7 +19,7 @@
 	$.bootstrapStrength.defaults = {
 		stripped: true,
 		active: true,
-		slimBar: true,
+		slimBar: false,
 		minLenght: 8,
 		upperCase: 1,
 		upperReg: "[A-Z]",
