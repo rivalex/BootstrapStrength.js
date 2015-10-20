@@ -19,30 +19,182 @@
     </section>
 
     <section class="main-content">
-      <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+      <h1>
+<a id="bootstrapstrengthjs" class="anchor" href="#bootstrapstrengthjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>BootstrapStrength.js</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+<p>jQuery plugin to calculate string or password strength with Bootstrap progress bar full customizable.
+Thanks to <a href="https://github.com/aarondo" class="user-mention">@aarondo</a> project that inspire a Bootstrap dedicated plugin.</p>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>BootstrapStrength.js provides a string strength indicator to show how secure a users password or a string is.</p>
+
+<p>The string strength indicator is marked on 5 scores. These are</p>
+
+<ul>
+<li>  String must contain 8 characters or more</li>
+<li>  String must contain 1 lowercase letter</li>
+<li>  String must contain 1 uppercase letter</li>
+<li>  String must contain 1 number</li>
+<li>  String must contain 1 special character such as <code>[!,%,&amp;,@,#,$,^,*,?,_,~]</code>
+</li>
+</ul>
+
+<p>The script works on input fileds an on <strong>Bootstrap input group</strong> fields as well. </p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
 
 <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a id="include-the-relevant-files" class="anchor" href="#include-the-relevant-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Include the relevant files</h3>
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+<p>Firstly include <strong>jQuery</strong>, <strong>Bootstrap</strong> and <strong>bootstrap-strength.js</strong> files. Place these before <code>&amp;lt;/head&amp;gt;</code> section or in footer as well.</p>
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating pages manually</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://code.jquery.com/jquery-2.1.4.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>bootstrap-strength.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>script.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a id="create-a-password-or-text-input-field" class="anchor" href="#create-a-password-or-text-input-field" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a password or text input field</h3>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+<p>All fields <strong>must have a unique ID</strong>.</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">input</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>myPassword<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>password<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>&gt;</pre></div>
+
+<h3>
+<a id="initiate-the-plugin" class="anchor" href="#initiate-the-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initiate the plugin</h3>
+
+<p>Once you have created your input field you will need to initiate the plugin.
+At its most basic level you can initiate the plugin like:</p>
+
+<div class="highlight highlight-source-js"><pre>$(<span class="pl-c1">document</span>).ready(<span class="pl-k">function</span> (<span class="pl-smi">$</span>) {
+    $(<span class="pl-s"><span class="pl-pds">"</span>#myPassword<span class="pl-pds">"</span></span>).bootstrapStrength();
+});</pre></div>
+
+<p>If you want to initiate the plugin with options then you can do so like:</p>
+
+<div class="highlight highlight-source-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#myPassword<span class="pl-pds">'</span></span>).bootstrapStrength({
+    stripped<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    active<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    slimBar<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    minLenght<span class="pl-k">:</span> <span class="pl-c1">8</span>,
+    upperCase<span class="pl-k">:</span> <span class="pl-c1">1</span>,
+    upperReg<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>[A-Z]<span class="pl-pds">"</span></span>,
+    lowerCase<span class="pl-k">:</span> <span class="pl-c1">1</span>,
+    lowerReg<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>[a-z]<span class="pl-pds">"</span></span>,
+    numbers<span class="pl-k">:</span> <span class="pl-c1">1</span>,
+    numberReg<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>[0-9]<span class="pl-pds">"</span></span>,
+    specialchars<span class="pl-k">:</span> <span class="pl-c1">1</span>,
+    specialReg<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>[!,%,&amp;,@,#,$,^,*,?,_,~]<span class="pl-pds">"</span></span>,
+    topMargin<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>5px;<span class="pl-pds">"</span></span>,
+    meterClasses<span class="pl-k">:</span> {
+        weak<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>progress-bar-danger<span class="pl-pds">"</span></span>,
+        medium<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>progress-bar-warning<span class="pl-pds">"</span></span>,
+        good<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>progress-bar-success<span class="pl-pds">"</span></span>
+    }
+});</pre></div>
+
+<h2>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Default Value</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>stripped</td>
+            <td>true</td>
+            <td>Use the stripped progress bar from Bootstrap css</td>
+        </tr>
+        <tr>
+            <td>active</td>
+            <td>true</td>
+            <td>Animate the stripped progress bar if enabled</td>
+        </tr>
+        <tr>
+            <td>slimBar</td>
+            <td>true</td>
+            <td>Reduce the standard Bootstrap progress bar to a 7px height</td>
+        </tr>
+        <tr>
+            <td>minLenght</td>
+            <td>8</td>
+            <td>Define the <b>minumum length</b> of the string</td>
+        </tr>
+        <tr>
+            <td>upperCase</td>
+            <td>1</td>
+            <td>Define <b>how many Upper case letter/s</b> are required. Any positive integer is accepted</td>
+        </tr>
+        <tr>
+            <td>upperReg</td>
+            <td>[A-Z]</td>
+            <td>A <b>RegEx</b> containing the Capitol definition for matching. It can be customized to mach specific character groups.</td>
+        </tr>
+        <tr>
+            <td>lowerCase</td>
+            <td>1</td>
+            <td>Define <b>how many Lower case letter/s</b> are required. Any positive integer is accepted</td>
+        </tr>
+        <tr>
+            <td>lowerReg</td>
+            <td>[a-z]</td>
+            <td>A <b>RegEx</b> containing the Lower Case definition for matching. It can be customized to mach specific character groups.</td>
+        </tr>
+        <tr>
+            <td>numbers</td>
+            <td>1</td>
+            <td>Define <b>how many Number/s</b> are required. Any positive integer is accepted</td>
+        </tr>
+        <tr>
+            <td>numberReg</td>
+            <td>[0-9]</td>
+            <td>A <b>RegEx</b> containing the Numbers definition for matching. It can be customized to mach specific character groups.</td>
+        </tr>
+        <tr>
+            <td>specialchars</td>
+            <td>1</td>
+            <td>Define <b>how many Special Character/s</b> are required. Any positive integer is accepted</td>
+        </tr>
+        <tr>
+            <td>specialReg</td>
+            <td>[!,%,&amp;,@,#,$,^,*,?,_,~]</td>
+            <td>A <b>RegEx</b> containing the Special Character definition for matching. It can be customized to mach specific character groups.</td>
+        </tr>
+        <tr>
+            <td>topMargin</td>
+            <td>5px</td>
+            <td>Define the margin between input and progress bar.</td>
+        </tr>
+        <tr>
+            <td>meterClasses</td>
+            <td></td>
+            <td>Contain an array for css progress bar classes</td>
+        </tr>
+        <tr>
+            <td>meterClasses.weak</td>
+            <td>progress-bar-danger</td>
+            <td>Style use under 50% of string strength</td>
+        </tr>
+        <tr>
+            <td>meterClasses.weak</td>
+            <td>progress-bar-warning</td>
+            <td>Style use between 50% and 80% of string strength</td>
+        </tr>
+        <tr>
+            <td>meterClasses.weak</td>
+            <td>progress-bar-success</td>
+            <td>Style use for 100% of string strength</td>
+        </tr>
+    </tbody>
+</table>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/rivalex/bootstrap-strength.js">BootstrapStrength.js</a> is maintained by <a href="https://github.com/rivalex">rivalex</a>.</span>
