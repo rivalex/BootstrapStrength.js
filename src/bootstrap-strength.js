@@ -90,8 +90,8 @@
 			}
 			
 			progress = $("<div/>", {
-				class: "progress" + ((options.slimBar)?" progress-xs":""),
-				style: "margin-top:" + options.topMargin
+				class: "progress",
+				style: "margin-top:" + options.topMargin + ((options.slimBar) ? "height: 7px;border-radius: 7px" : "")
 			})
 			progressbar = $("<div/>", {
 				class: "progress-bar" + ((options.stripped)?" progress-bar-striped":"") + ((options.active)?" active":""),
